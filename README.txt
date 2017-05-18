@@ -12,9 +12,7 @@ Set Up
 
 1. Download and install R (https://cran.r-project.org/).
 
-2. Download and install RStudio
-
-(https://www.rstudio.com/products/rstudio/download2/). Make sure you have the
+2. Download and install RStudio (https://www.rstudio.com/products/rstudio/download2/). Make sure you have the
 latest versions!
 
 3. Inside RStudio go to Tools -> Install Packages and install learnr, plotly,
