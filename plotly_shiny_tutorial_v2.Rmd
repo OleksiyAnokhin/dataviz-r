@@ -192,43 +192,9 @@ Other features we may want to add are simple lines for the agency average and ad
 
 But there are many more things you can add!
 
-```{r loadData2, include=TRUE}
 
-# Note: Repeating data load due to error in learnr package
-schoolData <- structure(list(last_hs_name = c("River ", "West Spring Hill ", 
-"Upland ", "North ", "South ", "Peak ", "City ", "White Sands ", 
-"Central ", "Camino ", "Orchard "), hs_diploma = c(258L, 435L, 
-263L, 205L, 435L, 257L, 194L, 392L, 337L, 453L, 529L), pct_4yr = c(27.1317829457364, 
-28.0459770114943, 41.4448669201521, 41.4634146341463, 44.1379310344828, 
-44.3579766536965, 51.0309278350515, 52.8061224489796, 53.4124629080119, 
-65.121412803532, 73.1568998109641), pct_2yr = c(32.5581395348837, 
-26.6666666666667, 18.6311787072243, 25.3658536585366, 27.816091954023, 
-29.5719844357977, 16.4948453608247, 26.2755102040816, 24.6290801186944, 
-21.1920529801325, 14.1776937618147), pct_4yr_delayed = c(0, 1.60919540229885, 
-1.14068441064639, 0.48780487804878, 1.14942528735632, 0, 0.515463917525773, 
-1.02040816326531, 1.48367952522255, 1.32450331125828, 1.13421550094518
-), pct_2yr_delayed = c(3.87596899224806, 5.97701149425287, 4.94296577946768, 
-5.85365853658537, 4.13793103448276, 4.28015564202335, 3.09278350515464, 
-3.31632653061224, 2.67062314540059, 0.662251655629139, 1.32325141776938
-), avg_test_math_8_std = c(-0.0572368162790698, -0.17006474045977, 
-0.0620150684410646, 0.168237465365854, 0.320300586206897, 0.122428973929961, 
-0.21138548814433, 0.492871761734694, 0.46508424925816, 0.713709099337748, 
-0.951112215879017), order_2yr = c(11L, 8L, 3L, 6L, 9L, 10L, 2L, 
-7L, 5L, 4L, 1L), order_4yr = 1:11), .Names = c("last_hs_name", 
-"hs_diploma", "pct_4yr", "pct_2yr", "pct_4yr_delayed", "pct_2yr_delayed", 
-"avg_test_math_8_std", "order_2yr", "order_4yr"), row.names = c(NA, 
--11L), class = c("tbl_df", "tbl", "data.frame"))
 
-agencyData <- structure(list(last_hs_name = "Agency Average", hs_diploma = 3758L, 
-    pct_4yr = 49.4944119212347, pct_2yr = 23.6029803086748, pct_4yr_delayed = 1.0111761575306, 
-    pct_2yr_delayed = 3.40606705694518, avg_test_math_8_std = 0.359298796035125), .Names = c("last_hs_name", 
-"hs_diploma", "pct_4yr", "pct_2yr", "pct_4yr_delayed", "pct_2yr_delayed", 
-"avg_test_math_8_std"), row.names = c(NA, -1L), class = c("tbl_df", 
-"tbl", "data.frame"))
-
-```
-
-```{r layout-scatter, exercise=TRUE, exercise.eval=TRUE, exercise.setup="loadData2", echo=TRUE, include=TRUE, message=FALSE, warning=FALSE, exercise.lines=30}
+```{r layout-scatter, exercise=TRUE, exercise.eval=TRUE, exercise.setup="loadData", echo=TRUE, include=TRUE, message=FALSE, warning=FALSE, exercise.lines=30}
 # Necessary to repeat code for plot_2 because of how the html document works (see below)
 plot_2 <- plot_ly(data = schoolData, x = ~avg_test_math_8_std, y = ~pct_4yr, mode = "markers", type="scatter",
                     marker = list(size=10,
@@ -327,47 +293,11 @@ Now it's your turn.
 
 ## Plotly Exercises
 
-```{r loadData3, include=TRUE}
-
-# Note: Repeating data load due to error in learnr package
-schoolData <- structure(list(last_hs_name = c("River ", "West Spring Hill ", 
-"Upland ", "North ", "South ", "Peak ", "City ", "White Sands ", 
-"Central ", "Camino ", "Orchard "), hs_diploma = c(258L, 435L, 
-263L, 205L, 435L, 257L, 194L, 392L, 337L, 453L, 529L), pct_4yr = c(27.1317829457364, 
-28.0459770114943, 41.4448669201521, 41.4634146341463, 44.1379310344828, 
-44.3579766536965, 51.0309278350515, 52.8061224489796, 53.4124629080119, 
-65.121412803532, 73.1568998109641), pct_2yr = c(32.5581395348837, 
-26.6666666666667, 18.6311787072243, 25.3658536585366, 27.816091954023, 
-29.5719844357977, 16.4948453608247, 26.2755102040816, 24.6290801186944, 
-21.1920529801325, 14.1776937618147), pct_4yr_delayed = c(0, 1.60919540229885, 
-1.14068441064639, 0.48780487804878, 1.14942528735632, 0, 0.515463917525773, 
-1.02040816326531, 1.48367952522255, 1.32450331125828, 1.13421550094518
-), pct_2yr_delayed = c(3.87596899224806, 5.97701149425287, 4.94296577946768, 
-5.85365853658537, 4.13793103448276, 4.28015564202335, 3.09278350515464, 
-3.31632653061224, 2.67062314540059, 0.662251655629139, 1.32325141776938
-), avg_test_math_8_std = c(-0.0572368162790698, -0.17006474045977, 
-0.0620150684410646, 0.168237465365854, 0.320300586206897, 0.122428973929961, 
-0.21138548814433, 0.492871761734694, 0.46508424925816, 0.713709099337748, 
-0.951112215879017), order_2yr = c(11L, 8L, 3L, 6L, 9L, 10L, 2L, 
-7L, 5L, 4L, 1L), order_4yr = 1:11), .Names = c("last_hs_name", 
-"hs_diploma", "pct_4yr", "pct_2yr", "pct_4yr_delayed", "pct_2yr_delayed", 
-"avg_test_math_8_std", "order_2yr", "order_4yr"), row.names = c(NA, 
--11L), class = c("tbl_df", "tbl", "data.frame"))
-
-agencyData <- structure(list(last_hs_name = "Agency Average", hs_diploma = 3758L, 
-    pct_4yr = 49.4944119212347, pct_2yr = 23.6029803086748, pct_4yr_delayed = 1.0111761575306, 
-    pct_2yr_delayed = 3.40606705694518, avg_test_math_8_std = 0.359298796035125), .Names = c("last_hs_name", 
-"hs_diploma", "pct_4yr", "pct_2yr", "pct_4yr_delayed", "pct_2yr_delayed", 
-"avg_test_math_8_std"), row.names = c(NA, -1L), class = c("tbl_df", 
-"tbl", "data.frame"))
-
-```
-
 ### Basic Bar Graph (and Custom Tooltips)
 
 Instead of a scatter plot we will be building a bar graph as an exercise. Each bar will be a school and our outcome will be 4-year enrollment. Because we want the bars sorted from lowest to highest by enrollment, we use `order_4yr` as our `x` variable. We will add the school names to the x-axis in a later step. In the exercise below, there is an outline of the graph code. Input the missing information. Remember, you can return to the first page if you need to see variable names and refer to the previous scatter plot example. Feel free to change the colors or other features. A full list of colors is available [here](https://www.w3.org/TR/css3-color/#svg-color). Note: You could also use RGB or hex colors.
 
-```{r basic-bar, exercise=TRUE, exercise.eval=FALSE, exercise.setup="loadData3"}
+```{r basic-bar, exercise=TRUE, exercise.eval=FALSE, exercise.setup="loadData"}
 
 bar_1 <- plot_ly(data = schoolData, x = ?, y = ?, type="?", name="Seamless",
                   text = ~paste(
@@ -403,7 +333,7 @@ Clicking the solution button will review the solution. Did you get it?
 
 Let's also add the delayed enrollment percentages for each school to our graph. This is equivalent to adding another `plot_ly` graph, so we use `add_trace`. We have to add the trace to `bar_1` so `bar_1` is already filled in from the previous exercise. If you want to use your own graph, copy and paste your code from the previous exercise. Complete the outline for `add_trace()`.
 
-```{r bar-add-trace, exercise=TRUE, exercise.eval=FALSE, exercise.setup="loadData3"}
+```{r bar-add-trace, exercise=TRUE, exercise.eval=FALSE, exercise.setup="loadData"}
 # bar_1 complete or add your code here
 bar_1 <- plot_ly(data = schoolData, x = ~order_4yr, y = ~pct_4yr, type="bar", name="Seamless",
                   text = ~paste(
@@ -448,7 +378,7 @@ bar_2
 
 To stack the bars, we use `layout()` and add `barmode = "stack"`. Add this below.
 
-```{r bar-stack, exercise=TRUE, exercise.eval=FALSE, exercise.setup="loadData3", exercise.lines=20}
+```{r bar-stack, exercise=TRUE, exercise.eval=FALSE, exercise.setup="loadData", exercise.lines=20}
 # bar_1 complete or add your code here
 bar_1 <- plot_ly(data = schoolData, x = ~order_4yr, y = ~pct_4yr, type="bar", name="Seamless",
                   text = ~paste(
@@ -499,7 +429,7 @@ bar_3
 
 Just like in the previous scatter example, we will now add lines and text, and change the layout to add titles.
 
-```{r bar-layout, exercise=TRUE, exercise.eval=FALSE, exercise.setup="loadData3", exercise.lines=30}
+```{r bar-layout, exercise=TRUE, exercise.eval=FALSE, exercise.setup="loadData", exercise.lines=30}
 # bar_1 complete or add your code here
 bar_1 <- plot_ly(data = schoolData, x = ~order_4yr, y = ~pct_4yr, type="bar", name="Seamless",
                   text = ~paste(
@@ -637,42 +567,6 @@ bar_3_with_opts
 
 ## Quick Aside on Functions
 
-```{r loadData4, include=TRUE}
-
-# Note: Repeating data load due to error in learnr package
-schoolData <- structure(list(last_hs_name = c("River ", "West Spring Hill ", 
-"Upland ", "North ", "South ", "Peak ", "City ", "White Sands ", 
-"Central ", "Camino ", "Orchard "), hs_diploma = c(258L, 435L, 
-263L, 205L, 435L, 257L, 194L, 392L, 337L, 453L, 529L), pct_4yr = c(27.1317829457364, 
-28.0459770114943, 41.4448669201521, 41.4634146341463, 44.1379310344828, 
-44.3579766536965, 51.0309278350515, 52.8061224489796, 53.4124629080119, 
-65.121412803532, 73.1568998109641), pct_2yr = c(32.5581395348837, 
-26.6666666666667, 18.6311787072243, 25.3658536585366, 27.816091954023, 
-29.5719844357977, 16.4948453608247, 26.2755102040816, 24.6290801186944, 
-21.1920529801325, 14.1776937618147), pct_4yr_delayed = c(0, 1.60919540229885, 
-1.14068441064639, 0.48780487804878, 1.14942528735632, 0, 0.515463917525773, 
-1.02040816326531, 1.48367952522255, 1.32450331125828, 1.13421550094518
-), pct_2yr_delayed = c(3.87596899224806, 5.97701149425287, 4.94296577946768, 
-5.85365853658537, 4.13793103448276, 4.28015564202335, 3.09278350515464, 
-3.31632653061224, 2.67062314540059, 0.662251655629139, 1.32325141776938
-), avg_test_math_8_std = c(-0.0572368162790698, -0.17006474045977, 
-0.0620150684410646, 0.168237465365854, 0.320300586206897, 0.122428973929961, 
-0.21138548814433, 0.492871761734694, 0.46508424925816, 0.713709099337748, 
-0.951112215879017), order_2yr = c(11L, 8L, 3L, 6L, 9L, 10L, 2L, 
-7L, 5L, 4L, 1L), order_4yr = 1:11), .Names = c("last_hs_name", 
-"hs_diploma", "pct_4yr", "pct_2yr", "pct_4yr_delayed", "pct_2yr_delayed", 
-"avg_test_math_8_std", "order_2yr", "order_4yr"), row.names = c(NA, 
--11L), class = c("tbl_df", "tbl", "data.frame"))
-
-agencyData <- structure(list(last_hs_name = "Agency Average", hs_diploma = 3758L, 
-    pct_4yr = 49.4944119212347, pct_2yr = 23.6029803086748, pct_4yr_delayed = 1.0111761575306, 
-    pct_2yr_delayed = 3.40606705694518, avg_test_math_8_std = 0.359298796035125), .Names = c("last_hs_name", 
-"hs_diploma", "pct_4yr", "pct_2yr", "pct_4yr_delayed", "pct_2yr_delayed", 
-"avg_test_math_8_std"), row.names = c(NA, -1L), class = c("tbl_df", 
-"tbl", "data.frame"))
-
-```
-
 To make our graph interactive, we have to make it so that the graph code changes the arguments and data elements within it based on user input. The easiest way to do this is to change our graph code into a function. OUr function will take basic input arguments and use those inputs to change the output. A very basic example of a function is below. Put whatever text you want where it says "Your text here" and watch it get printed out. 
 
 ```{r basic-function, exercise=TRUE, exercise.eval=FALSE, echo=TRUE, include=TRUE, message=FALSE, warning=FALSE}
@@ -687,7 +581,7 @@ printme(x="Your text here")
 
 We want to do the same thing for our graphing code so that we can have the graph be for 2-year or 4-year enrollment. Our input is "2" or "4" and graph output changes based on that input. Below we can take all parameters in the college enrollment scatter that should change with the selection of 2-year or 4-year enrollment and change them using and if statement. Put 2 or 4 into the function at the bottom and watch the graph change.
 
-```{r scatter-function, exercise=TRUE, exercise.eval=TRUE, echo=TRUE, include=TRUE, message=FALSE, warning=FALSE, exercise.setup="loadData4", exercise.lines=30}
+```{r scatter-function, exercise=TRUE, exercise.eval=TRUE, echo=TRUE, include=TRUE, message=FALSE, warning=FALSE, exercise.setup="loadData", exercise.lines=30}
 
 scatter_function <- function(college_type){
   
@@ -803,43 +697,7 @@ scatter_function(college_type=2)
 Time permitting, try the same exercise on our bar chart.
 
 
-```{r loadData5, include=TRUE}
-
-# Note: Repeating data load due to error in learnr package
-schoolData <- structure(list(last_hs_name = c("River ", "West Spring Hill ", 
-"Upland ", "North ", "South ", "Peak ", "City ", "White Sands ", 
-"Central ", "Camino ", "Orchard "), hs_diploma = c(258L, 435L, 
-263L, 205L, 435L, 257L, 194L, 392L, 337L, 453L, 529L), pct_4yr = c(27.1317829457364, 
-28.0459770114943, 41.4448669201521, 41.4634146341463, 44.1379310344828, 
-44.3579766536965, 51.0309278350515, 52.8061224489796, 53.4124629080119, 
-65.121412803532, 73.1568998109641), pct_2yr = c(32.5581395348837, 
-26.6666666666667, 18.6311787072243, 25.3658536585366, 27.816091954023, 
-29.5719844357977, 16.4948453608247, 26.2755102040816, 24.6290801186944, 
-21.1920529801325, 14.1776937618147), pct_4yr_delayed = c(0, 1.60919540229885, 
-1.14068441064639, 0.48780487804878, 1.14942528735632, 0, 0.515463917525773, 
-1.02040816326531, 1.48367952522255, 1.32450331125828, 1.13421550094518
-), pct_2yr_delayed = c(3.87596899224806, 5.97701149425287, 4.94296577946768, 
-5.85365853658537, 4.13793103448276, 4.28015564202335, 3.09278350515464, 
-3.31632653061224, 2.67062314540059, 0.662251655629139, 1.32325141776938
-), avg_test_math_8_std = c(-0.0572368162790698, -0.17006474045977, 
-0.0620150684410646, 0.168237465365854, 0.320300586206897, 0.122428973929961, 
-0.21138548814433, 0.492871761734694, 0.46508424925816, 0.713709099337748, 
-0.951112215879017), order_2yr = c(11L, 8L, 3L, 6L, 9L, 10L, 2L, 
-7L, 5L, 4L, 1L), order_4yr = 1:11), .Names = c("last_hs_name", 
-"hs_diploma", "pct_4yr", "pct_2yr", "pct_4yr_delayed", "pct_2yr_delayed", 
-"avg_test_math_8_std", "order_2yr", "order_4yr"), row.names = c(NA, 
--11L), class = c("tbl_df", "tbl", "data.frame"))
-
-agencyData <- structure(list(last_hs_name = "Agency Average", hs_diploma = 3758L, 
-    pct_4yr = 49.4944119212347, pct_2yr = 23.6029803086748, pct_4yr_delayed = 1.0111761575306, 
-    pct_2yr_delayed = 3.40606705694518, avg_test_math_8_std = 0.359298796035125), .Names = c("last_hs_name", 
-"hs_diploma", "pct_4yr", "pct_2yr", "pct_4yr_delayed", "pct_2yr_delayed", 
-"avg_test_math_8_std"), row.names = c(NA, -1L), class = c("tbl_df", 
-"tbl", "data.frame"))
-
-```
-
-```{r bar-function, exercise=TRUE, exercise.eval=FALSE, echo=TRUE, include=TRUE, message=FALSE, warning=FALSE, exercise.setup="loadData5", exercise.lines=30}
+```{r bar-function, exercise=TRUE, exercise.eval=FALSE, echo=TRUE, include=TRUE, message=FALSE, warning=FALSE, exercise.setup="loadData", exercise.lines=30}
 
 bar_function <- function(college_type){
   
