@@ -5,7 +5,7 @@ runtime: shiny_prerendered
 ---
 
 ```{r setup, include=FALSE}
-packages <- c("learnr","ggplot2","plotly", "plyr", "tidyverse", "shiny", "shinythemes")
+packages <- c("learnr","ggplot2","plotly", "shiny", "shinythemes")
 lapply(packages, library, character.only = TRUE)
 knitr::opts_chunk$set(echo = FALSE)
 ```
